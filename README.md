@@ -4,6 +4,8 @@ It's goal is to understand how to create Android application from scratch, its s
 
 The project is based on [this article on Russian](https://habrahabr.ru/post/210584/) and [this article on English](http://geosoft.no/development/android.html).
 
+All binary output files are kept in the repo to let you completely understand the project.
+
 Steps to repeat the project goal.
 
 1. Install JDK and Android SDK.
