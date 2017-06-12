@@ -151,4 +151,5 @@ jarsigner
 <PATH_TO_YOUR_ANDROID_SDK>/platform-tools/adb shell am start ru.coffeeplanter.minimum/ru.coffeeplanter.minimum.MainActivity
 ```
 
+### Minimum
 ![Screenshot](/screenshot.png?raw=true "Screenshot")
