@@ -71,36 +71,79 @@ public class MainActivity extends Activity {
 
 7. Create R.java class file by this command.
 ```bash
-<PATH_TO_YOUR_ANDROID_SDK>/build-tools/25.0.2/aapt package -f -m -S <PATH_TO_YOUR_PROJECT>/res -J <PATH_TO_YOUR_PROJECT>/src -M <PATH_TO_YOUR_PROJECT>/AndroidManifest.xml -I <PATH_TO_YOUR_ANDROID_SDK>/platforms/android-25/android.jar
+<PATH_TO_YOUR_ANDROID_SDK>/build-tools/25.0.2/aapt
+	package
+	-f
+	-m
+	-S <PATH_TO_YOUR_PROJECT>/res
+	-J <PATH_TO_YOUR_PROJECT>/src
+	-M <PATH_TO_YOUR_PROJECT>/AndroidManifest.xml
+	-I <PATH_TO_YOUR_ANDROID_SDK>/platforms/android-25/android.jar
 ```
 
 8. Compile the project to java binary files.
-```
-javac -source 7 -target 7 -verbose -d <PATH_TO_YOUR_PROJECT>/obj -classpath <PATH_TO_YOUR_ANDROID_SDK>/platforms/android-25/android.jar:<PATH_TO_YOUR_PROJECT>/obj -sourcepath <PATH_TO_YOUR_PROJECT>/src <PATH_TO_YOUR_PROJECT>/src/ru/coffeeplanter/minimum/*.java
+```bash
+javac
+	-source 7
+	-target 7
+	-verbose
+	-d <PATH_TO_YOUR_PROJECT>/obj
+	-classpath <PATH_TO_YOUR_ANDROID_SDK>/platforms/android-25/android.jar:<PATH_TO_YOUR_PROJECT>/obj
+	-sourcepath <PATH_TO_YOUR_PROJECT>/src
+	<PATH_TO_YOUR_PROJECT>/src/ru/coffeeplanter/minimum/*.java
 ```
 
 9. Create dex file for Android Java machine. Use here absolute path, otherwise it can an error occur.
-```
-<PATH_TO_YOUR_ANDROID_SDK>/build-tools/25.0.2/dx --dex --verbose --output=<PATH_TO_YOUR_PROJECT>/bin/classes.dex <PATH_TO_YOUR_PROJECT>/obj
+```bash
+<PATH_TO_YOUR_ANDROID_SDK>/build-tools/25.0.2/dx
+	--dex
+	--verbose
+	--output=<PATH_TO_YOUR_PROJECT>/bin/classes.dex
+	<PATH_TO_YOUR_PROJECT>/obj
 ```
 
 10. Make ansigned apk file.
-```
-<PATH_TO_YOUR_ANDROID_SDK>/build-tools/25.0.2/aapt package -f -M <PATH_TO_YOUR_PROJECT>/AndroidManifest.xml -S <PATH_TO_YOUR_PROJECT>/res -I <PATH_TO_YOUR_ANDROID_SDK>/platforms/android-25/android.jar -F <PATH_TO_YOUR_PROJECT>/bin/AndroidTest.unsigned.apk <PATH_TO_YOUR_PROJECT>/bin
+```bash
+<PATH_TO_YOUR_ANDROID_SDK>/build-tools/25.0.2/aapt
+	package
+	-f
+	-M <PATH_TO_YOUR_PROJECT>/AndroidManifest.xml
+	-S <PATH_TO_YOUR_PROJECT>/res
+	-I <PATH_TO_YOUR_ANDROID_SDK>/platforms/android-25/android.jar
+	-F <PATH_TO_YOUR_PROJECT>/bin/AndroidTest.unsigned.apk
+	<PATH_TO_YOUR_PROJECT>/bin
 ```
 
 11. Generate keystore file, if you don't have it.
-```
-keytool -genkey -validity 10000 -dname "CN=AndroidDebug, O=Android, C=US" -keystore <PATH_TO_YOUR_KEYSTORE>/AndroidTest.keystore -storepass <YOUR_STORE_PASSWORD> -keypass <YOUR_KEY_PASSWORD> -alias <YOUR_KEY_NAME> -keyalg RSA -v -keysize 2048
+```bash
+keytool
+	-genkey
+	-validity 10000
+	-dname "CN=AndroidDebug, O=Android, C=US"
+	-keystore <PATH_TO_YOUR_KEYSTORE>/AndroidTest.keystore
+	-storepass <YOUR_STORE_PASSWORD>
+	-keypass <YOUR_KEY_PASSWORD>
+	-alias <YOUR_KEY_NAME>
+	-keyalg RSA
+	-v
+	-keysize 2048
 ```
 
 12. Sign your project with the keystore file.
-```
-jarsigner -sigalg SHA1withRSA -digestalg SHA1 -keystore <PATH_TO_YOUR_KEYSTORE>/AndroidTest.keystore -storepass <YOUR_STORE_PASSWORD> -keypass <YOUR_KEY_PASSWORD> -signedjar %DEV_HOME%/bin/AndroidTest.signed.apk <PATH_TO_YOUR_PROJECT>/bin/AndroidTest.unsigned.apk <YOUR_KEY_NAME>
+```bash
+jarsigner
+	-sigalg SHA1withRSA
+	-digestalg SHA1
+	-keystore <PATH_TO_YOUR_KEYSTORE>/AndroidTest.keystore
+	-storepass <YOUR_STORE_PASSWORD>
+	-keypass <YOUR_KEY_PASSWORD>
+	-signedjar %DEV_HOME%/bin/AndroidTest.signed.apk
+	<PATH_TO_YOUR_PROJECT>/bin/AndroidTest.unsigned.apk
+	<YOUR_KEY_NAME>
 ```
 
 13. Install the compiled and signed app on a phone or emulator.
-```
+```bash
 <PATH_TO_YOUR_ANDROID_SDK>/platform-tools/adb uninstall ru.coffeeplanter.minimum
 <PATH_TO_YOUR_ANDROID_SDK>/platform-tools/adb install <PATH_TO_YOUR_PROJECT>/bin/AndroidTest.signed.apk
 <PATH_TO_YOUR_ANDROID_SDK>/platform-tools/adb shell am start ru.coffeeplanter.minimum/ru.coffeeplanter.minimum.MainActivity
