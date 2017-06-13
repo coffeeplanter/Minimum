@@ -1,4 +1,7 @@
 ## Minimum
+
+*This branch contains application with layout resource. See the minimally possible application in the appropriate git branch.*
+
 This is minimal Android application written without IDE, in a simple text editor and compiled in command line.
 Its goal is to understand how to create Android application from scratch, its structure, and necessary tools.
 
@@ -16,6 +19,8 @@ All binary output files are kept in the repo to let you completely understand th
 ├───bin
 ├───obj
 ├───res
+│   ├───layout
+│   │       activity_main.xml
 │   └───values
 │           strings.xml
 │
@@ -41,7 +46,27 @@ All binary output files are kept in the repo to let you completely understand th
 </manifest>
 ```
 
-4. Create resources file.
+4. Create resources files.  
+activity_main.xml:
+```xml
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_gravity="center"
+	android:gravity="center">
+
+	<TextView
+		android:id="@+id/label_textview"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="16dp"
+		android:gravity="center"
+		android:text="@string/text_label"
+		android:textSize="24sp"/>
+
+</LinearLayout>
+```
+strings.xml:
 ```xml
 <resources>
 	<string name="text_label">This is an app written in a simple text editor, without IDE.</string>
@@ -61,9 +86,7 @@ public class MainActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		TextView textView = new TextView(this);
-		textView.setText(getString(R.string.text_label));
-		setContentView(textView);
+		setContentView(R.layout.activity_main);
 	}
 
 }
