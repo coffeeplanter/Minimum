@@ -1,6 +1,6 @@
 ## Minimum
 
-This branch contains minimal application. The size of signed apk file is only 4Kb.
+*This branch contains minimal application. The size of signed apk file is only 4Kb.*
 
 This is minimal Android application written without IDE, in a simple text editor and compiled in command line.
 Its goal is to understand how to create Android application from scratch, its structure, and necessary tools.
