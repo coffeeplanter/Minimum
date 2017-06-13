@@ -70,7 +70,7 @@ activity_main.xml:
 strings.xml:
 ```xml
 <resources>
-	<string name="text_label">This is an app written in a simple text editor, without IDE.</string>
+	<string name="text_label">This is an app\nwritten in a simple text editor,\nwithout Android Studio\nor any other IDE.\nEnjoy! :-)</string>
 </resources>
 ```
 
