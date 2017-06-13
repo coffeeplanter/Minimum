@@ -47,7 +47,7 @@ All binary output files are kept in the repo to let you completely understand th
 4. Create resources file.
 ```xml
 <resources>
-	<string name="text_label">This is an app written in a simple text editor, without IDE.</string>
+	<string name="text_label">This is the app written in a simple text editor, without IDE.</string>
 </resources>
 ```
 
