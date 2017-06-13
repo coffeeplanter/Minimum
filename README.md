@@ -1,6 +1,6 @@
 ## Minimum
 
-*This branch contains application with layout resource.  
+*This branch contains the application with layout resource.  
 See the minimally possible application in the appropriate git branch.*
 
 This is minimal Android application written without IDE, in a simple text editor and compiled in command line.
