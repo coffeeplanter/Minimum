@@ -6,7 +6,7 @@ The project is based on [this article on Russian](https://habrahabr.ru/post/2105
 
 All binary output files are kept in the repo to let you completely understand the project.
 
-### Steps to repeat the project.
+### Steps to repeat the project
 
 1. Install JDK and Android SDK.
 
