@@ -9,9 +9,7 @@ public class MainActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		TextView textView = new TextView(this);
-		textView.setText(getString(R.string.text_label));
-		setContentView(textView);
+		setContentView(R.layout.activity_main);
 	}
 
 }
