@@ -1,6 +1,6 @@
 ## Minimum
 This is minimal Android application written without IDE, in a simple text editor and compiled in command line.
-It's goal is to understand how to create Android application from scratch, its structure, and necessary tools.
+Its goal is to understand how to create Android application from scratch, its structure, and necessary tools.
 
 The project is based on [this article on Russian](https://habrahabr.ru/post/210584/) and [this article on English](http://geosoft.no/development/android.html).
 
