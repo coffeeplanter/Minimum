@@ -47,6 +47,7 @@ All binary output files are kept in the repo to let you completely understand th
 ```
 
 4. Create resources files.  
+
 activity_main.xml:
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
