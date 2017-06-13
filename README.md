@@ -129,7 +129,7 @@ javac
 	<PATH_TO_YOUR_PROJECT>/obj
 ```
 
-10. Make ansigned apk file.
+10. Make unsigned apk file. Delete existing AndroidTest.unsigned.apk and AndroidTest.signed.apk files before running this command.
 ```bash
 <PATH_TO_YOUR_ANDROID_SDK>/build-tools/25.0.2/aapt
 	package
