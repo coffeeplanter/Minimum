@@ -33,7 +33,7 @@ All binary output files are kept in the repo to let you completely understand th
             └───minimum
                 ├───login
                 │       PinActivity.java
-                │       PinInteactor.java
+                │       PinInteractor.java
                 │       PinInteractorImpl.java
                 │       PinPresenter.java
                 │       PinPresenterImpl.java
