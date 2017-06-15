@@ -1,7 +1,12 @@
 ## Minimum
 
 *This branch contains the application with layout resource.  
-See the minimally possible application in the appropriate git branch.*
+See the minimally possible application and MVP app in the appropriate git branches.*
+
+This repo contains three Android applications:
+* minimally possible app (minimal-app branch);
+* app with layout resource (this branch — master);
+* simple app using MVP (Model — View — Presenter) architecture (mvp-app branch).
 
 This is minimal Android application written without IDE, in a simple text editor and compiled in command line.
 Its goal is to understand how to create Android application from scratch, its structure, and necessary tools.
@@ -26,9 +31,9 @@ All binary output files are kept in the repo to let you completely understand th
 │           strings.xml
 │
 └───src
-    └───com
-        └───example
-            └───testapp
+    └───ru
+        └───coffeeplanter
+            └───minimum
                     MainActivity.java
 ```
 
