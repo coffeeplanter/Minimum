@@ -1,3 +1,17 @@
 <resources>
-	<string name="text_label">This is the app\nwritten in a simple text editor,\nwithout Android Studio\nor any other IDE.\nEnjoy! :-)</string>
+
+    <!-- AndroidManifest.xml -->
+	<string name="app_name">Minimum</string>
+	<string name="pin_activity_title">Minimum</string>
+	<string name="main_activity_title">Minimum — Main Screen</string>
+
+	<!-- activity_pin.xml -->
+	<string name="text_label">Please enter pin below:</string>
+	<string name="hint_text">Enter pin</string>
+	<string name="log_in_button_text">Log in</string>
+
+	<!-- PinActivity.java -->
+	<string name="pin_empty_error">Pin cannot be empty</string>
+	<string name="pin_short_error">Pin has to contain four symbols</string>
+
 </resources>

@@ -1,10 +1,12 @@
-package ru.coffeeplanter.minimum;
+package ru.coffeeplanter.minimum.login;
 
 public interface PinInteractor {
 
 	interface OnLoginFinishedListener {
 
-		void onPinError();
+		void onPinEmptyError();
+
+		void onPinShortError();
 
 		void onSuccess();
 

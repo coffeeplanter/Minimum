@@ -1,4 +1,4 @@
-package ru.coffeeplanter.minimum;
+package ru.coffeeplanter.minimum.login;
 
 public interface PinPresenter {
 

@@ -1,4 +1,4 @@
-package ru.coffeeplanter.minimum;
+package ru.coffeeplanter.minimum.login;
 
 public interface PinView {
 
@@ -6,7 +6,9 @@ public interface PinView {
 
 	void hideProgress();
 
-	void setPinError();
+	void setPinEmptyError();
+
+	void setPinShortError();
 
 	void navigateToMainActivity();
 

@@ -1,4 +1,4 @@
-package ru.coffeeplanter.minimum;
+package ru.coffeeplanter.minimum.login;
 
 import android.os.Handler;
 import android.text.TextUtils;
@@ -6,20 +6,25 @@ import android.text.TextUtils;
 public class PinInteractorImpl implements PinInteractor {
 
 	@Override
-	void login(final String pin, final OnLoginFinishedListener listener) {
+	public void login(final String pin, final OnLoginFinishedListener listener) {
 		// Mocking login.
-		new Handler.postDelayed(new Runnable() {
+		new Handler().postDelayed(new Runnable() {
 			@Override
 			public void run() {
 				boolean error = false;
 				if (TextUtils.isEmpty(pin)) {
-					listener.onPinError();
+					listener.onPinEmptyError();
+					error = true;
+					return;
+				}
+				if (pin.length() < 4) {
+					listener.onPinShortError();
 					error = true;
 					return;
 				}
 				if (!error) listener.onSuccess();
 			}
-		}, 2000);
+		}, 1000);
 	}
 
 }

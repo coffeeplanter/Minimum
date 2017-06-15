@@ -1,6 +1,7 @@
-package ru.coffeeplanter.minimum;
+package ru.coffeeplanter.minimum.login;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -9,7 +10,7 @@ import android.widget.ProgressBar;
 import ru.coffeeplanter.minimum.R;
 import ru.coffeeplanter.minimum.main.MainActivity;
 
-public class MainActivity extends Activity implements PinView, View.OnClickListener {
+public class PinActivity extends Activity implements PinView, View.OnClickListener {
 
 	private ProgressBar mProgressBar;
 	private EditText mPinEditText;
@@ -47,8 +48,13 @@ public class MainActivity extends Activity implements PinView, View.OnClickListe
 	}
 
 	@Override
-	public void setPinError() {
-		mPinEditText.setError(getString(R.string.pin_error));
+	public void setPinEmptyError() {
+		mPinEditText.setError(getString(R.string.pin_empty_error));
+	}
+
+	@Override
+	public void setPinShortError() {
+		mPinEditText.setError(getString(R.string.pin_short_error));
 	}
 
 	@Override

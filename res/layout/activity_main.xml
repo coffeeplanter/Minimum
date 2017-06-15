@@ -1,16 +1,20 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content"
-	android:layout_gravity="center"
-	android:gravity="center">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
 
-	<TextView
-		android:id="@+id/label_textview"
+	<ListView
+		android:id="@+id/item_list"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:padding="8dp"
+		android:clipToPadding="false"
+		android:scrollbarStyle="outsideOverlay"/>
+
+	<ProgressBar
+		android:id="@+id/main_progress"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_margin="16dp"
-		android:gravity="center"
-		android:text="@string/text_label"
-		android:textSize="24sp"/>
+		android:layout_gravity="center"
+		android:visibility="gone"/>
 
-</LinearLayout>
+</FrameLayout>

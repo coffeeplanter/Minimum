@@ -1,40 +1,48 @@
-package ru.coffeeplanter.minimum;
+package ru.coffeeplanter.minimum.login;
 
 public class PinPresenterImpl implements PinPresenter, PinInteractor.OnLoginFinishedListener {
 
-	PinView pinView;
-	PinInteractor pinInteractor;
+	PinView mPinView;
+	PinInteractor mPinInteractor;
 
-	public void PinPresenterImpl(PinView pinView) {
-		this.pinView = pinView;
-		this.pinInteractor = new PinInteractorImpl();
+	public PinPresenterImpl(PinView pinView) {
+		this.mPinView = pinView;
+		this.mPinInteractor = new PinInteractorImpl();
 	}
 
 	@Override
 	public void validatePin(String pin) {
-		if (pinView != null) {
-			pinView.showProgress();
+		if (mPinView != null) {
+			mPinView.showProgress();
 		}
-		pinInteractor.login(pin, this);
+		mPinInteractor.login(pin, this);
 	}
 
 	@Override
 	public void onDestroy() {
-		pinView = null;
+		mPinView = null;
 	}
 
 	@Override
-	public void onPinError() {
-		if (pinView != null) {
-			pinView.setPinError();
-			pinView.hideProgress();
+	public void onPinEmptyError() {
+		if (mPinView != null) {
+			mPinView.setPinEmptyError();
+			mPinView.hideProgress();
+		}
+	}
+
+	@Override
+	public void onPinShortError() {
+		if (mPinView != null) {
+			mPinView.setPinShortError();
+			mPinView.hideProgress();
 		}
 	}
 
 	@Override
 	public void onSuccess() {
-		if (pinView != null) {
-			pinView.navigateToMainActivity();
+		if (mPinView != null) {
+			mPinView.navigateToMainActivity();
 		}
 	}
 

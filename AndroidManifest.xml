@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="ru.coffeeplanter.minimum">
 	<uses-sdk android:targetSdkVersion="25"/>
-	<application android:label="Minimum">
-		<activity android:name=".pin.PinActivity" android:label="Minimum Login">
+	<application android:label="@string/app_name">
+		<activity android:name=".login.PinActivity" android:label="@string/pin_activity_title">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN"/>
 				<category android:name="android.intent.category.LAUNCHER"/>
