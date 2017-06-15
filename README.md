@@ -3,7 +3,7 @@
 *This branch contains minimal application. The size of signed apk file is only 4Kb.  
 See the other versions of application in the appropriate git branches.*
 
-This is minimal Android application written without IDE, in a simple text editor and compiled in command line.
+This is the minimal Android application written without IDE, in a simple text editor and compiled in command line.
 Its goal is to understand how to create Android application from scratch, its structure, and necessary tools.
 
 The project is based on [this article on Russian](https://habrahabr.ru/post/210584/) and [this article on English](http://geosoft.no/development/android.html).
